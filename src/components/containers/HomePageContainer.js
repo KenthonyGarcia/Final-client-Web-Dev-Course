@@ -1,8 +1,17 @@
+/*==================================================
+HomePageContainer.js
+It renders the home page. 
+================================================== */
+import Header from './Header';
 import HomePageView from '../views/HomePageView';
 
 const HomePageContainer = () => {
   return (
-    <HomePageView />
+    <div>
+      <Header />
+      <HomePageView />
+    </div>
+    
   );
 };
 
