@@ -1,4 +1,4 @@
-# client-starter-codes
+# client-starter-code
 
 This repository is the client starter code for Final Project (CRUD Application).
 
