@@ -1,7 +1,8 @@
 /*==================================================
 NewStudentView.js
+
+The Views component is responsible for rendering web page with data provided by the corresponding Container component.
 It constructs a React component to display the new student page.
-The component is to be included in NewStudentContainer.js
 ================================================== */
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';

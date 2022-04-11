@@ -1,7 +1,8 @@
 /*==================================================
 HomePageView.js
+
+The Views component is responsible for rendering web page with data provided by the corresponding Container component.
 It constructs a React component to display the home page.
-The component is to be included in HomePageContainer.js
 ================================================== */
 const HomePageView = () => {
   // Render Home page view

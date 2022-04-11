@@ -5,7 +5,7 @@ import * as at from './actionTypes';
  * for each action type
  */
 
-// All campuses
+// All Campuses
 export const fetchAllCampuses = (campuses) => {
   return {
     type: at.FETCH_ALL_CAMPUSES,
@@ -13,7 +13,7 @@ export const fetchAllCampuses = (campuses) => {
   };
 };
 
-//Single campus
+//Single Campus
 export const fetchCampus = (campus) => {
   return {
     type: at.FETCH_CAMPUS,
@@ -21,7 +21,7 @@ export const fetchCampus = (campus) => {
   };
 };
 
-//All students
+//All Students
 export const fetchAllStudents = (students) => {
   return {
     type: at.FETCH_ALL_STUDENTS,
@@ -51,7 +51,7 @@ export const editStudent = (student) => {
   };
 };
 
-//Single student
+//Single Student
 export const fetchStudent = (student) => {
   return {
     type: at.FETCH_STUDENT,

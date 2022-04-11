@@ -1,7 +1,9 @@
 /*==================================================
 NewStudentContainer.js
-It renders the new student view page. 
-It also contains Thunk.
+
+The Container component is responsible for stateful logic and data fetching, and
+passes data (if any) as props to the corresponding View component.
+If needed, it also defines the component's "connect" function.
 ================================================== */
 import Header from './Header';
 import { Component } from 'react';
@@ -66,7 +68,7 @@ class NewStudentContainer extends Component {
       return (<Redirect to={`/student/${this.state.redirectId}`}/>)
     }
 
-    // Display the input form
+    // Display the input form via the corresponding View component
     return (
       <div>
         <Header />
@@ -79,9 +81,9 @@ class NewStudentContainer extends Component {
   }
 }
 
-// The following constructs the "connect" function used by NewStudentContainer to connect to Redux Store.  
-// Passing Redux Thunk (action creator) as props to the "connect" function
-// The "mapDispatch" is to call the specific Thunk to dispatch its action.
+// The following input argument is passed to the "connect" function used by "NewStudentContainer" component to connect to Redux Store.
+// The "mapDispatch" argument is used to dispatch Action (Redux Thunk) to Redux Store.
+// The "mapDispatch" calls the specific Thunk to dispatch its action. The "dispatch" is a function of Redux Store.
 const mapDispatch = (dispatch) => {
     return({
         addStudent: (student) => dispatch(addStudentThunk(student)),

@@ -1,7 +1,9 @@
 /*==================================================
 CampusContainer.js
-It renders the single campus view page. 
-It also contains Thunk.
+
+The Container component is responsible for stateful logic and data fetching, and
+passes data (if any) as props to the corresponding View component.
+If needed, it also defines the component's "connect" function.
 ================================================== */
 import Header from './Header';
 import React, { Component } from "react";
@@ -17,7 +19,7 @@ class CampusContainer extends Component {
     this.props.fetchCampus(this.props.match.params.id);
   }
 
-  // Render a Campus view by passing campus data as props to the component
+  // Render a Campus view by passing campus data as props to the corresponding View component
   render() {
     return (
       <div>
@@ -28,20 +30,19 @@ class CampusContainer extends Component {
   }
 }
 
-// The following 2 parts construct the "connect" function used by CampusContainer to connect to Redux Store.  
-// 1. Passing Redux Thunk (action creator) as props to the "connect" function
-// The "mapDispatch" is to call the specific Thunk to dispatch its action.
+// The following 2 input arguments are passed to the "connect" function used by "CampusContainer" component to connect to Redux Store.
+// 1. The "mapState" argument specifies the data from Redux Store that the component needs.
+// The "mapState" is called when the Store State changes, and it returns a data object of "campus".
+const mapState = (state) => {
+  return {
+    campus: state.campus,  // Get the State object from Reducer "campus"
+  };
+};
+// 2. The "mapDispatch" argument is used to dispatch Action (Redux Thunk) to Redux Store.
+// The "mapDispatch" calls the specific Thunk to dispatch its action. The "dispatch" is a function of Redux Store.
 const mapDispatch = (dispatch) => {
   return {
     fetchCampus: (id) => dispatch(fetchCampusThunk(id)),
-  };
-};
-// 2. Passing Redux State as props to the "connect" function
-// The "mapState" is called when the Store State changes. 
-// It returns an object of "campus" data that CampusContainer needs.
-const mapState = (state) => {
-  return {
-    campus: state.campus,
   };
 };
 

@@ -1,7 +1,8 @@
 /*==================================================
 StudentView.js
+
+The Views component is responsible for rendering web page with data provided by the corresponding Container component.
 It constructs a React component to display the single student view page.
-The component is to be included in StudentContainer.js
 ================================================== */
 const StudentView = (props) => {
   const { student } = props;

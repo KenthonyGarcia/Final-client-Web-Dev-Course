@@ -1,13 +1,14 @@
 /*==================================================
 AllStudentsView.js
+
+The Views component is responsible for rendering web page with data provided by the corresponding Container component.
 It constructs a React component to display the all students view page.
-The component is to be included in AllStudentsContainer.js
 ================================================== */
 import { Link } from "react-router-dom";
 
 const AllStudentsView = (props) => {
   const {students, deleteStudent} = props;
-
+  // If there is no student, display a message
   if (!students.length) {
     return (
     <div>
@@ -19,7 +20,7 @@ const AllStudentsView = (props) => {
     );
   }
   
-  // Render All Students view 
+  // If there is at least one student, render All Students view 
   return (
     <div>
       <h1>All Students</h1>
@@ -41,6 +42,7 @@ const AllStudentsView = (props) => {
       <Link to={`/newstudent`}>
         <button>Add New Student</button>
       </Link>
+      <br/><br/>
     </div>
   );
 };

@@ -1,5 +1,6 @@
 /*==================================================
 Header.js
+
 It contains the Header component to be displayed on every page.
 The header contains navigation links to every other page.
 ================================================== */

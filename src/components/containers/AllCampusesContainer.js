@@ -1,7 +1,9 @@
 /*==================================================
-AllCampusesContainer.js
-It renders the all campuses view page. 
-It also contains Thunk.
+/src/components/containers\AllCampusesContainer.js
+
+The Container component is responsible for stateful logic and data fetching, and
+passes data (if any) as props to the corresponding View component.
+If needed, it also defines the component's "connect" function.
 ================================================== */
 import Header from './Header';
 import { Component } from "react";
@@ -17,7 +19,7 @@ class AllCampusesContainer extends Component {
     this.props.fetchAllCampuses();
   }
 
-  // Render All Campuses view by passing all campuses data as props to the component
+  // Render All Campuses view by passing all campuses data as props to the corresponding View component
   render() {
     return (
       <div>
@@ -30,20 +32,19 @@ class AllCampusesContainer extends Component {
   }
 }
 
-// The following 2 parts construct the "connect" function used by AllCampusesContainer to connect to Redux Store.  
-// 1. Passing Redux Thunk (action creator) as props to the "connect" function
-// The "mapDispatch" is to call the specific Thunk to dispatch its action.
+// 1. The "mapState" argument specifies the data from Redux Store that the component needs.
+// The "mapState" is called when the Store State changes, and it returns a data object of "allCampuses".
+// The following 2 input arguments are passed to the "connect" function used by "AllCampusesContainer" component to connect to Redux Store.
+const mapState = (state) => {
+  return {
+    allCampuses: state.allCampuses,  // Get the State object from Reducer "allCampuses"
+  };
+};  
+// 2. The "mapDispatch" argument is used to dispatch Action (Redux Thunk) to Redux Store.
+// The "mapDispatch" calls the specific Thunk to dispatch its action. The "dispatch" is a function of Redux Store.
 const mapDispatch = (dispatch) => {
   return {
     fetchAllCampuses: () => dispatch(fetchAllCampusesThunk()),
-  };
-};
-// 2. Passing Redux State as props to the "connect" function
-// The "mapState" is called when the Store State changes. 
-// It returns an object of "allCampuses" data that AllStudentsContainer needs.
-const mapState = (state) => {
-  return {
-    allCampuses: state.allCampuses,
   };
 };
 
