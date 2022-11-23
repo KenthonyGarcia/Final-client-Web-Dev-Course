@@ -38,6 +38,7 @@ const AllCampusesView = (props) => {
   );
 };
 
+// Validate data type of the props passed to component.
 AllCampusesView.propTypes = {
   allCampuses: PropTypes.array.isRequired,
 };
