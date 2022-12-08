@@ -1,5 +1,5 @@
 /*==================================================
-NewCampusView.js
+EditCampusView.js
 
 The Views component is responsible for rendering web page with data provided by the corresponding Container component.
 It constructs a React component to display the new Campus page.
@@ -35,34 +35,39 @@ const useStyles = makeStyles( () => ({
 }));
 
 const NewCampusView = (props) => {
-  const {handleChange, handleSubmit } = props;
+  const {campus, handleChange, handleSubmit } = props;
   const classes = useStyles();
 
   // Render a New Campus view with an input form
   return (
     <div>
-      <h1>New Campus</h1>
+      <h1>Edit Campus</h1>
 
       <div className={classes.root}>
         <div className={classes.formContainer}>
           <div className={classes.formTitle}>
             <Typography style={{fontWeight: 'bold', fontFamily: 'Courier, sans-serif', fontSize: '20px', color: '#11153e'}}>
-              Add a Campus
+              Edit a Campus
             </Typography>
           </div>
           <form style={{textAlign: 'center'}} onSubmit={(e) => handleSubmit(e)}>
             <label style= {{color:'#11153e', fontWeight: 'bold'}}>Campus Name: </label>
-            <input type="text" name="name" onChange ={(e) => handleChange(e)} required />
+            <input type="text" name="name" onChange ={(e) => handleChange(e)} value = {campus.name} required />
             <br/>
             <br/>
 
             <label style={{color:'#11153e', fontWeight: 'bold'}}>Campus Address: </label>
-            <input type="text" name="address" onChange={(e) => handleChange(e)} required />
+            <input type="text" name="address" onChange={(e) => handleChange(e)} value = {campus.address} required />
+            <br/>
+            <br/>
+
+            <label style={{color:'#11153e', fontWeight: 'bold'}}>Campus ImageUrl: </label>
+            <input type="text" name="imageUrl" onChange={(e) => handleChange(e)} value = {campus.imageUrl} required />
             <br/>
             <br/>
 
             <label style={{color:'#11153e', fontWeight: 'bold'}}>Campus Description: </label>
-            <input type="text" name="description" onChange={(e) => handleChange(e)} />
+            <input type="text" name="description" onChange={(e) => handleChange(e)} required />
             <br/>
             <br/>
 
