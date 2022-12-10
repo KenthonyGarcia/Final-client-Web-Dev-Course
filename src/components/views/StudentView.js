@@ -15,7 +15,8 @@ const StudentView = (props) => {
       <p>Email: {student.email}</p>
       <p>{student.imageUrl}</p>
       <p>GPA: {student.gpa}</p>
-      
+      {student.campus ? (<link to={'/student/${student.campus.id}'}>{student.campus.name}</link>) : (<p>No campus listed</p>)
+      }
     
       <link to={'/student'}>Return to Students</link>
     </div>
