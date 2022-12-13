@@ -63,7 +63,7 @@ class EditStudentContainer extends Component {
     this.setState({
         firstname: "", 
         lastname: "", 
-        imageURL: "",
+        imageUrl: "",
         email: "",
         gpa: "",
         campusId: null, 

@@ -41,18 +41,18 @@ class EditCampusContainer extends Component {
         event.preventDefault(); // Prevent browser reload/refresh after submit.
         let campus = {
             name: this.state.name,
-            imageUrl: this.state.imageUrl,
             address: this.state.address,
             description: this.state.description,
+            imageUrl: this.state.imageUrl,
             id: this.state.campusId
         };
         await this.props.editCampus(campus);
 
         this.setState({
             name: "", 
-            imageUrl: "", 
             address: "",
             description: "", 
+            imageUrl: "",
             redirect: true, 
             redirectId: this.state.campusId
           });
