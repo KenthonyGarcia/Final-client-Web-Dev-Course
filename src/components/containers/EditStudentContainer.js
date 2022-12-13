@@ -11,7 +11,6 @@ import { Redirect } from 'react-router-dom';
 
 import EditStudentView from '../views/EditStudentView';
 import { fetchStudentThunk, editStudentThunk } from '../../store/thunks';
-import { toast } from 'react-toastify';
 
 class EditStudentContainer extends Component {
   // Initialize state
