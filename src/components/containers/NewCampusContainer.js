@@ -1,5 +1,6 @@
 /*==================================================
 NewCampusContainer.js
+
 The Container component is responsible for stateful logic and data fetching, and
 passes data (if any) as props to the corresponding View component.
 If needed, it also defines the component's "connect" function.
@@ -20,16 +21,11 @@ class NewCampusContainer extends Component {
             name: "",
             address: "",
             description: "",
+            imageUrl: "",
             redirect: false, 
             redirectId: null,
         };
     }
-    // Get campus data from back-end database
-    componentDidMount() {
-        //getting campus ID from url
-        this.props.fetchCampus(this.props.match.params.id);
-    }
-
     // Capture input data when it is entered
     handleChange = event => {
         this.setState({
@@ -48,9 +44,9 @@ class NewCampusContainer extends Component {
 
         this.setState({
             name: "", 
-            imageUrl: "", 
             address: "",
-            description: "", 
+            description: "",
+            imageUrl: "", 
             redirect: true, 
             redirectId: this.state.campusId
           });
