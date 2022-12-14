@@ -14,7 +14,7 @@ const CampusView = (props) => {
   return (
     <div>
       <h1>{campus.name}</h1>
-      <img src={campus.imageURL} alt={campus.name} />
+      <img src={campus.imageUrl} alt={campus.name} />
       <p>{campus.address}</p>
       <p>{campus.description}</p>
       <button onClick={() => {history.push(`/campus/${campus.id}/edit`);}}>Edit Campus Info</button>
