@@ -19,6 +19,7 @@ const StudentView = (props) => {
       <div>
         <h1>{student.firstname + " " + student.lastname}</h1>
         <h3>{student.campus ? student.campus.name : <p>Student is not enrolled in a campus</p>}</h3>
+        <p>{student.email}</p>
         <img src={student.imageUrl} alt= {student.name} height="200px"/>
         <p>GPA: {student.gpa}</p>
         {student.campus ? (<Link to={`/campus/${student.campus.id}`}>{student.campus.name}</Link>) : (<p>No Campus Listed</p>)}

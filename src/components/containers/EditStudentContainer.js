@@ -21,6 +21,7 @@ class EditStudentContainer extends Component {
             firstname: "",
             lastname: "",
             imageUrl: "",
+            email: "",
             campusId: null,
             gpa: null,
             redirect: false,
